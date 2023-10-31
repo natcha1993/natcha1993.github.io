@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Natcha</title>
+</head>
+
+<body>
+    <table border="1" style="">
+            <tr>
+                <th>ป้อนชื่อสินค้า</th>
+                <th>ป้อนราคาสินค้า</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                        <input type="text" name="goods" id="goods">
+                </td>
+                <td><input type="text" name="price" id="price"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td align="center"><button type="submit" name="submit" id="submit" onclick="clike_submit()">Submit</button></td>
+                <td align="center"><button type="reset" name="reset" id="reset" onclick="clike_reset()">Reset</button></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+    คำนวณราคาสินค้าที่บวก7%
+    <p name="output" id="output"></p>
+
+    <script>
+
+        function clike_submit(){
+            if(
+                document.getElementById('goods').value !=''&&
+                document.getElementById('price').value !=''&&
+                Number(document.getElementById('price').value)
+            
+            ){
+                document.getElementById('output').innerHTML =
+            document.getElementById('goods').value +'='+
+            (Number(document.getElementById('price').value)+
+            Number((document.getElementById('price').value * 0.07))).toFixed(2)+'บาท' 
+            
+            //เคลียร์ช่องป้อน
+            document.getElementById('goods').value =''
+            document.getElementById('price').value =''
+
+            }
+
+
+       
+
+        }
+        function clike_reset(){
+            document.getElementById('goods').value =''
+            document.getElementById('price').value =''
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>
